@@ -7,7 +7,7 @@ workflows:
   build-herokudeploy:
     jobs:
       - build
-      - heroku/deploy-via-git: #pre-configured job
+      - deploy
           requires:
             - build
           filters:
@@ -55,6 +55,14 @@ jobs:
           destination: tr1
       - store_test_results:
           path: test-reports/
+          
+  deploy:
+   executor: heroku/default
+   steps:
+     - checkout
+     - heroku/install
+     - heroku/deploy-via-git
+     
   #deploy:
   #  executor: machine
   #  steps:
