@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  heroku: circleci/heroku@1.1.1 # Invoke the Heroku orb
+  heroku: circleci/heroku@1.2.6 # Invoke the Heroku orb
 
 workflows:
   build-herokudeploy:
@@ -12,7 +12,7 @@ workflows:
             - build
           filters:
             branches:
-              only: master
+              only: live
 
 jobs:
   build:
