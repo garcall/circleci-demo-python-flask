@@ -3,16 +3,16 @@ version: 2.1
 orbs:
   heroku: circleci/heroku@1.2.6 # Invoke the Heroku orb
 
-workflows:
-  build-herokudeploy:
-    jobs:
-      - build
-      - deploy
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
+#workflows:
+#  build-herokudeploy:
+#    jobs:
+#      - build
+#      - deploy
+#          requires:
+#            - build
+#          filters:
+#            branches:
+#              only: master
 
 jobs:
   build:
