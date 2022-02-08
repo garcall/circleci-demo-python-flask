@@ -53,6 +53,7 @@ jobs:
       - store_test_results:
           path: test-reports/
   deploy:
+    executor: machine
     steps:
       - checkout
       - run:
